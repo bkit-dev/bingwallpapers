@@ -1,10 +1,12 @@
-# https://github.com/bachvtuan/Bing-Linux-Wallpaper/blob/54 a6f1ec92c1560187534a7706085d9bd87eb1d9/service.py#L48
-import json, os
-from pathlib import Path
+# https://github.com/bachvtuan/Bing-Linux-Wallpaper/blob/master/service.py
+import json
+import os
 from urllib.request import urlopen, urlretrieve
 import subprocess
 import time
+from pathlib import Path
 from multiprocessing import Process, Queue,freeze_support
+import argparse
 
 home_site = "http://bing.com"
 weekly_wallpapers_url = home_site + "/HPImageArchive.aspx?format=js&idx=0&n=8&mkt=en-US"
@@ -16,9 +18,9 @@ def get_desktop_environment():
   enviroment_desktops = ['gnome','unity','mate','cinnamon','xfce']
   enviroment_name = ''
   for enviroment_desktop in enviroment_desktops:
-    print(enviroment_desktop)
+    # print(enviroment_desktop)
     result = subprocess.run( ['pgrep','-l',enviroment_desktop] , capture_output=True, text=True).stdout
-    print(result)
+    # print(result)
     count_occur = result.split("\n")
     count_appear = 0
     count_occur = result.count( enviroment_desktop )
@@ -31,7 +33,7 @@ def get_desktop_environment():
 def set_wallpaper( wallpaper_file_path ):
   #http://stackoverflow.com/questions/1977694/change-desktop-background
   desktop_environment = get_desktop_environment()
-  print("desktop_environment is " + desktop_environment)
+  # print("desktop_environment is " + desktop_environment)
   print(wallpaper_file_path)
 
   if desktop_environment in ["gnome", "unity", "cinnamon"]:
@@ -63,6 +65,7 @@ def random_wallpaper( wallpapers_folder, date_ranges):
     
     set_wallpaper( "\""+os.path.abspath(os.path.join(wallpapers_folder, choose_wallper )) + "\"" )
     notify("Your wallpaper is set from " + choose_wallper)
+    os.system("xfdesktop-settings & ")
     return choose_wallper
   else:
     return None
@@ -122,8 +125,31 @@ def get_weekly_wallpapers(wallpapers_folder, q, is_force = False):
   finally:
     pass
 
-#q = Queue()
-#wallpaper_folder= str(Path.home())+ "/Pictures/bing"
-#print(get_desktop_environment())
-#print(get_weekly_wallpapers(wallpaper_folder, q, False))
-#random_wallpaper(wallpaper_folder, "")
+if __name__ == '__main__':
+  parser = argparse.ArgumentParser("bing background photo downloader")
+  parser.add_argument("download", help="download image files to ~/Pictures/bing folder. keep old files.", type=bool)
+  # parser.add_argument("update", help="update image files to ~/Pictures/bing folder. remove old files.", type=bool)
+  parser.add_argument("random", help="randomly change background picture.", type=bool)
+  args = parser.parse_args()
+  # print(args.counter + 1)args.download args.update args.random
+
+  q = Queue()
+  wallpaper_folder= str(Path.home())+ "/Pictures/bing"
+
+  if args.download:
+    print(get_weekly_wallpapers(wallpaper_folder, q, False))
+    pass
+
+  # if args.update:
+  #   print(get_weekly_wallpapers(wallpaper_folder, q, False))
+  #   pass
+
+  if args.random:
+    random_wallpaper(wallpaper_folder, "")
+    pass
+
+# q = Queue()
+# wallpaper_folder= str(Path.home())+ "/Pictures/bing"
+# #print(get_desktop_environment())
+# print(get_weekly_wallpapers(wallpaper_folder, q, False))
+# random_wallpaper(wallpaper_folder, "")
