@@ -11,15 +11,15 @@
 # google_analytics:
 # theme: jekyll-theme-minimal
 
-# remote_theme: daattali/beautiful-jekyll
+remote_theme: daattali/beautiful-jekyll
 # remote_theme: b2a3e8/jekyll-theme-console
 # remote_theme: murraco/jekyll-theme-minimal-resume
-remote_theme: alshedivat/al-folio
 
+# not working remote_theme: alshedivat/al-folio
 # not working remote_theme : mmistakes/minimal-mistakes
 # not working remote_theme: cotes2020/jekyll-theme-chirpy/tree/v6.2.2
 
-# remote_theme: nemkin/jekyll-theme-chirpy
+# partial working remote_theme: nemkin/jekyll-theme-chirpy
 # title: bkit
 # tagline: bkit
 # description: bkit
