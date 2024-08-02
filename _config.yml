@@ -1,5 +1,6 @@
 title: bingwallpapers
 description: bingwallpapers download and changer.
-show_downloads: true
-google_analytics:
-theme: jekyll-theme-hacker
+#show_downloads: true
+#google_analytics:
+#theme: jekyll-theme-hacker
+remote-theme: piharpi/jekyll-klise
