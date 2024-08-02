@@ -4,8 +4,8 @@
 #google_analytics:
 #theme: jekyll-theme-hacker
 # remote-theme: piharpi/jekyll-klise
-theme: jekyll-theme-chirpy
-remote-theme: cotes2020/jekyll-theme-chirpy
+theme: minimal-mistakes-jekyll
+# remote-theme: cotes2020/jekyll-theme-chirpy
 
 
 # The Site Configuration
