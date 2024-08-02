@@ -3,6 +3,8 @@ description: bingwallpapers download and changer.
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-hacker
+remote_theme: nemkin/jekyll-theme-chirpy
+
 # remote-theme: jekyll-theme-chirpy
 # remote-theme: piharpi/jekyll-klise
 # theme: minimal-mistakes-jekyll
