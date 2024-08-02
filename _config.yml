@@ -3,7 +3,10 @@
 # show_downloads: true
 # google_analytics:
 # theme: jekyll-theme-hacker
-remote_theme: cotes2020/jekyll-theme-chirpy
+
+# remote_theme: cotes2020/jekyll-theme-chirpy
+remote_theme: cotes2020/jekyll-theme-chirpy/tree/v6.5.5
+
 
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
