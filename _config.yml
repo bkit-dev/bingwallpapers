@@ -4,12 +4,14 @@
 # google_analytics:
 # theme: jekyll-theme-hacker
 
-title: bingwallpapers
-# logo: /assets/img/logo.png
-description: bingwallpapers download and changer.
-show_downloads: true
-google_analytics:
-theme: jekyll-theme-minimal
+# title: bingwallpapers
+# # logo: /assets/img/logo.png
+# description: bingwallpapers download and changer.
+# show_downloads: true
+# google_analytics:
+# theme: jekyll-theme-minimal
+
+remote_theme: piharpi/jekyll-klise
 
 # remote_theme: daattali/beautiful-jekyll`
 # not working remote_theme: cotes2020/jekyll-theme-chirpy/tree/v6.2.2
