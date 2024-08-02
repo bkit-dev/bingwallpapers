@@ -12,7 +12,8 @@
 # theme: jekyll-theme-minimal
 
 # remote_theme: daattali/beautiful-jekyll
-remote_theme: b2a3e8/jekyll-theme-console
+# remote_theme: b2a3e8/jekyll-theme-console
+remote_theme: murraco/jekyll-theme-minimal-resume
 
 # not working remote_theme : mmistakes/minimal-mistakes
 # not working remote_theme: cotes2020/jekyll-theme-chirpy/tree/v6.2.2
