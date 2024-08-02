@@ -2,7 +2,7 @@ title: bingwallpapers
 description: bingwallpapers download and changer.
 show_downloads: true
 google_analytics:
-theme: jekyll-theme-hacker
+# theme: jekyll-theme-hacker
 remote_theme: nemkin/jekyll-theme-chirpy
 
 # remote-theme: jekyll-theme-chirpy
