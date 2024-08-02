@@ -11,7 +11,22 @@
 # google_analytics:
 # theme: jekyll-theme-minimal
 
+title: bingwallpapers
+description: "bingwallpapers download and changer."
+baseurl: "/"
+url: "https://bingwallpapaers.bkit.dev"
+
+header_pages:
+  - index.md
+
+style: dark
+
+footer: 'fo'
+
+# Build settings
+markdown: kramdown
 remote_theme: b2a3e8/jekyll-theme-console
+
 # remote_theme: murraco/jekyll-theme-minimal-resume
 
 # not working remote_theme: alshedivat/al-folio
