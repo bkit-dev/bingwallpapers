@@ -11,26 +11,26 @@
 # google_analytics:
 # theme: jekyll-theme-minimal
 
-title: bingwallpapers
-description: "bingwallpapers download and changer."
-baseurl: "/"
-url: "https://bingwallpapaers.bkit.dev"
+# title: bingwallpapers
+# description: "bingwallpapers download and changer."
+# baseurl: "/"
+# url: "https://bingwallpapaers.bkit.dev"
 
-header_pages:
-  - index.md
+# header_pages:
+#   - index.md
 
-style: dark
+# style: dark
 
-footer: 'fo'
+# footer: 'fo'
 
-# Build settings
-markdown: kramdown
-remote_theme: b2a3e8/jekyll-theme-console
+# # Build settings
+# markdown: kramdown
+# remote_theme: b2a3e8/jekyll-theme-console
 
 # remote_theme: murraco/jekyll-theme-minimal-resume
 
 # not working remote_theme: alshedivat/al-folio
-# not working remote_theme : mmistakes/minimal-mistakes
+remote_theme : mmistakes/minimal-mistakes
 # not working remote_theme: cotes2020/jekyll-theme-chirpy/tree/v6.2.2
 
 # partial working remote_theme: nemkin/jekyll-theme-chirpy
