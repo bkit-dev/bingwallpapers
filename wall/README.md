@@ -1,9 +1,11 @@
 ---
 title: "wall readme"
-permalink: /wall/readme
-excerpt: "wall readme."
-last_modified_at: 2021-06-07T08:48:05-04:00
+permalink: /wall/index
+tags:
+  - table of contents
 toc: true
+toc_label: "Unique Title"
+toc_icon: "heart"
 ---
 
 <h1>wall test</h1>
