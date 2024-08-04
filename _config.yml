@@ -33,7 +33,7 @@
 # remote_theme: murraco/jekyll-theme-minimal-resume
 
 #----------------------------------------------------------------------
-remote_theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 
 #----------------------------------------------------------------------
 # not working remote_theme: alshedivat/al-folio
