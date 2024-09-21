@@ -37,14 +37,24 @@ def set_wallpaper( wallpaper_file_path ):
   print(wallpaper_file_path)
 
   if desktop_environment in ["gnome", "unity", "cinnamon"]:
-    os.system('gsettings set org.gnome.desktop.background picture-uri file://"%s"' % ( wallpaper_file_path ))
+    os.system('gsettings set org.gnome.desktop.background picture-uri file://%s' % ( wallpaper_file_path ))
   elif desktop_environment == 'mate':
-    os.system('gsettings set org.mate.background picture-filename "%s"' % ( wallpaper_file_path ))
+    os.system('gsettings set org.mate.background picture-filename %s' % ( wallpaper_file_path ))
   elif desktop_environment == 'xfce':
-    # os.system('xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-show -s true')
-    # os.system('xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s "%s"' % (wallpaper_file_path ))
-    # os.system('xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitoreDP-1/workspace0/last-image -s "%s"' % (wallpaper_file_path ))
-    os.system("xfconf-query -c xfce4-desktop -p $(xfconf-query -c xfce4-desktop -l | grep \"workspace0/last-image\") -s " + wallpaper_file_path)
+    result = subprocess.run( ['xfconf-query','-c','xfce4-desktop','-l'] , capture_output=True, text=True).stdout
+    # print(result)
+    for line in result.split("\n"):
+      r1 = subprocess.run( ['xfconf-query','-c','xfce4-desktop','-p',line,'-g'] , capture_output=True, text=True).stdout
+      # print(r1)
+      # print(wallpaper_file_path)
+      if "image-show" in line:
+        os.system('xfconf-query -c xfce4-desktop -p '+line+' -s true')
+      if "image-path" in line:
+        os.system('xfconf-query -c xfce4-desktop -p '+line+' -s %s' % (wallpaper_file_path ))
+      if "last-image" in line:
+        os.system('xfconf-query -c xfce4-desktop -p '+line+' -s %s' % (wallpaper_file_path ))
+      if "single-workspace-mode" in line:
+        os.system('xfconf-query -c xfce4-desktop -p '+line+' -s false')
 
 def is_valid( file_name, date_ranges ):
   return  len( date_ranges ) == 0 or file_name[:8] in date_ranges

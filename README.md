@@ -4,7 +4,7 @@ download and update bing wallpaper.<br/>
 
 > supported GUI. gnome, unity, mate, cinnamon, xfce.
 
-> not yet supported GUI. windows.
+> not yet supported GUI. git-bash, msys2.
 
 <h5>Table of Contents</h5>
 
